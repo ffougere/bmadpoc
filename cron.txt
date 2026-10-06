@@ -1,0 +1,3 @@
+# Exemple de cron
+# Tous les jours à 01:30
+30 1 * * * /opt/integration/bin/send_to_sap_api.ksh >> /var/log/cron_send_to_sap.log 2>&1
