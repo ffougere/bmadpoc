@@ -1,0 +1,19 @@
+application_id,application_name,owner_metier,owner_technique,domaine,criticite_metier_1_5,stabilite_regles_1_5,complexite_mapping_1_5,couplage_legacy_1_5,complexite_orchestration_1_5,fenetre_batch_1_5,volumetrie_1_5,frequence_1_5,sensibilite_donnees_1_5,exigence_audit_1_5,sla_disponibilite_1_5,maturite_equipe_1_5,score_total,classe_vague,pattern_cible,cout_mensuel_estime_usd,decision,commentaires
+APP-001,, , , , , , , , , , , , , , , , , , , , ,
+APP-002,, , , , , , , , , , , , , , , , , , , , ,
+APP-003,, , , , , , , , , , , , , , , , , , , , ,
+
+# Regles de scoring
+# score_total = somme des criteres notes de 1 a 5
+# classe_vague:
+# 12-24 = Vague A
+# 25-42 = Vague B
+# 43-60 = Vague C
+# pattern_cible:
+# A = EventBridge + Lambda + SQS + Step Functions
+# B = Batch/ECS Fargate + Step Functions + S3
+# C = Hybride legacy + AWS (bascule progressive)
+# fourchettes cout indicatives USD/mois:
+# Vague A: 200-1 000
+# Vague B: 1 000-8 000
+# Vague C: 8 000-40 000+
