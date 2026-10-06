@@ -1,0 +1,77 @@
+AWS Cheat sheet services
+
+Voici la liste complète des services identifiés dans tes documents, avec résumé, cas d’usage et type de tier.
+
+Périmètre: synthèse basée sur les fichiers du workspace (use cases, IaC, TOGAF, déploiement, labs Pluralsight).
+
+Service / Outil	Résumé	Cas d’usage dans tes docs	Type de tier
+Amazon Cognito	Gestion des identités, authN/authZ, MFA	Portails clients, onboarding, protection des APIs	Sécurité & Identité
+AWS IAM	Gestion fine des permissions utilisateurs/rôles/politiques	Least privilege, rôles ECS/Lambda/EC2, groupes IAM	Sécurité & Identité
+AWS Organizations + SCP	Gouvernance multi-comptes et garde-fous globaux	Contrôles de périmètre et conformité org	Gouvernance
+API Gateway	Exposition d’API REST avec throttling et sécurité	Point d’entrée des microservices bancaires	API & Intégration
+Amazon EKS	Orchestration Kubernetes managée	Moteurs de fraude, scoring, chatbot, conseils	Compute & Orchestration
+Amazon ECS	Orchestration conteneurs managée	Déploiement WordPress et app conteneurisée	Compute & Orchestration
+AWS Fargate	Exécution serverless des conteneurs	Services ECS sans gestion d’instances	Compute & Orchestration
+AWS Lambda	Exécution serverless événementielle	Remédiation auto, traitements event-driven	Compute & Orchestration
+AWS Bedrock	IA générative via modèles foundation	Conseil personnalisé, NLP, analyse de patterns fraude	IA/ML
+Amazon SageMaker	Entraînement/serving de modèles ML	Scoring crédit dynamique et MLOps	IA/ML
+Amazon Comprehend	NLP managé (langue/sentiment/extraction)	Chatbot bancaire, compréhension texte	IA/ML
+Amazon Comprehend Medical	NLP domaine santé (mentionné dans architecture RegTech)	Traitement documentaire spécialisé	IA/ML
+Amazon Neptune	Base graphe managée	Réseaux de fraude, relation client 360°, contrepartie	Données & Persistance
+Amazon OpenSearch Service	Recherche/indexation analytics	FAQ/docs, recherche sémantique, historique patterns	Données & Recherche
+Amazon RDS (MySQL/PostgreSQL)	Base relationnelle managée	WordPress DB, transactions applicatives	Données & Persistance
+Amazon DynamoDB	NoSQL clé-valeur/document	Cache/état temps réel pour détection fraude	Données & Persistance
+Amazon S3	Stockage objet	Artefacts, logs, données, tfstate	Données & Stockage
+Amazon Redshift	Entrepôt de données analytique	Analytics portefeuille et BI	Données & Analytics
+AWS Glue	ETL/data integration managé	Pipelines data lake / transformations	Données & Analytics
+Amazon Timestream	Base séries temporelles	Données marché/trading temporel	Données & Analytics
+Amazon ElastiCache	Cache in-memory managé	Réduction latence services temps réel	Données & Performance
+Amazon EventBridge	Bus d’événements et routage	Orchestration métier, notifications, remédiation	Intégration Événementielle
+Amazon SQS	File de messages	Découplage traitement asynchrone	Intégration Événementielle
+Amazon SNS	Pub/Sub notifications	Alertes et diffusion d’événements	Intégration Événementielle
+Amazon Kinesis	Ingestion/streaming temps réel	Flux transactions fraude	Streaming Data
+Amazon MSK (Kafka)	Kafka managé	Streaming trading/ingestion haute fréquence	Streaming Data
+AWS Step Functions	Orchestration de workflows	Conformité/regtech, pipelines métier	Orchestration
+Amazon EMR	Big data distribué (Spark/Hadoop)	Analyses avancées trading/risque	Analytics Big Data
+Elastic Load Balancing (ALB)	Répartition de charge HTTP/HTTPS	Exposition WordPress/ECS services	Réseau & Edge
+Amazon VPC	Isolation réseau logique	Segmentation multi-subnets privés/publics	Réseau
+Security Groups	Pare-feu étatful niveau ressource	Contrôle trafic ALB, RDS, ECS	Réseau & Sécurité
+NACL	Contrôle stateless niveau subnet	Renforcement segmentation réseau	Réseau & Sécurité
+AWS WAF	Pare-feu applicatif L7	Protection web OWASP Top 10	Sécurité Applicative
+AWS Shield	Protection DDoS	Durcissement exposition Internet	Sécurité Réseau
+AWS KMS	Gestion clés de chiffrement	Chiffrement at-rest S3/EBS/RDS/DynamoDB	Sécurité Données
+
+AWS Certificate Manager (ACM)	Gestion certificats TLS/SSL	Chiffrement in-transit	Sécurité Données
+AWS Secrets Manager	Stockage/rotation de secrets	Secrets DB injectés dans ECS tasks	Sécurité & Secrets
+AWS Systems Manager Parameter Store	Paramètres de config (String/SecureString)	Variables d’env. WordPress/ECS	Config & Secrets
+Amazon ECR	Registre d’images conteneurs	Push/pull images pour ECS/Fargate	Supply Chain Conteneur
+AWS CodePipeline	CI/CD managé	Pipelines sécurisés avec gates	CI/CD
+AWS CodeBuild	Build managé	Build, scans sécurité intégrés	CI/CD
+AWS Signer	Signature d’artefacts logiciels	Intégrité des livrables	Supply Chain Sécurité
+Amazon Inspector	Scan de vulnérabilités (dont images ECR)	Contrôle sécurité conteneurs	Sécurité Runtime
+AWS Config	Détection dérive configuration	Conformité continue, auto-remédiation	Gouvernance & Compliance
+AWS Security Hub	Agrégation posture sécurité	Centralisation findings CIS/PCI	Gouvernance & Compliance
+AWS CloudTrail	Journalisation des appels API	Audit, traçabilité sécurité	Observabilité & Audit
+Amazon CloudWatch Logs	Logs, métriques, alarmes	Vérification injection secrets ECS, monitoring	Observabilité
+VPC Flow Logs	Journalisation trafic réseau VPC	Analyse réseau et investigation	Observabilité Réseau
+Amazon GuardDuty	Détection menaces avec ML	Détection intelligente d’intrusion	Sécurité Détection
+Amazon Macie	Découverte/protection données sensibles S3	Contrôles data privacy/compliance	Sécurité Données
+Amazon Textract	Extraction OCR documents	Traitement documentaire conformité	IA Documentaire
+Amazon Rekognition	Vision/identité image/vidéo	KYC documentaire et vérification identité	IA Vision
+Amazon Pinpoint	Engagement multicanal	Notifications onboarding/campagnes	Engagement Client
+AWS Cloud9	IDE cloud	Build/push image ECR en lab	Outils Dev
+SonarQube	SAST code quality/sécurité	Contrôles Shift-Left	Outil tiers DevSecOps
+Semgrep	SAST basé règles	Détection vulnérabilités précoces	Outil tiers DevSecOps
+Snyk	SCA vulnérabilités dépendances	Contrôle libs open source	Outil tiers DevSecOps
+Trivy	Scan vulnérabilités images/dépendances/IaC	Contrôles conteneurs et dépendances	Outil tiers DevSecOps
+Dependabot	MAJ dépendances + alertes CVE	Hygiène sécurité software	Outil tiers DevSecOps
+GitGuardian	Détection fuite secrets Git	Prévention compromission clés	Outil tiers DevSecOps
+TruffleHog	Détection secrets dans dépôts	Scan historique Git	Outil tiers DevSecOps
+Checkov	Scan sécurité IaC	Contrôle Terraform/CloudFormation	Outil tiers IaC Security
+tfsec	Scan sécurité Terraform	Validation policies IaC	Outil tiers IaC Security
+cfn-lint	Lint CloudFormation	Validation templates et erreurs	Outil tiers IaC Quality
+Cosign	Signature/verif images et artefacts	Chaîne d’approvisionnement logicielle	Outil tiers Supply Chain
+Refinitiv Eikon	Fournisseur data marché	Alimentation cas conseil/trading	Service tiers externe
+Experian APIs	Fournisseur données crédit	Enrichissement scoring/risque	Service tiers externe
+GitHub Actions	CI/CD SaaS	Pipeline sécurisé alternatif AWS natif	Service tiers CI/CD
+GitLab CI	CI/CD SaaS/auto-hébergé	Pipeline sécurisé alternatif AWS natif	Service tiers CI/CD
